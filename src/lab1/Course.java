@@ -16,6 +16,8 @@ public abstract class Course {
     private String courseNumber;
     private double credits;
     
+    public abstract String getPrerequisiteCourses();
+    
     public void setCredits(double credits) {
         if(credits < 0.5 || credits > 4.0) {
             JOptionPane.showMessageDialog(null,
