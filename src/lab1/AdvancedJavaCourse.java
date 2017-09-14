@@ -28,4 +28,9 @@ public class AdvancedJavaCourse extends Course{
         }
         this.prerequisites = prerequisites;
     }
+
+    @Override
+    public String getPrerequisiteCourses() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
