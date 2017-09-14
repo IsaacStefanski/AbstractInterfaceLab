@@ -6,24 +6,11 @@ package lab1;
  * @author      Isaac Stefanski
  * @version     1.00
  */
-public class IntroJavaCourse extends Course{
-    private String prerequisites;
-
-    public IntroJavaCourse(String courseName, String courseNumber) {
-        this.courseName = courseName;
-        this.courseNumber = courseNumber;
-    }
-
-    public String getPrerequisites() {
-        return prerequisites;
-    }
-
-    public void setPrerequisites(String prerequisites) {
-        this.prerequisites = prerequisites;
-    }
-
-    @Override
-    public String getPrerequisiteCourses() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+public class IntroJavaCourse extends IntermediateCourse{
+    
+    public IntroJavaCourse(String courseName, String courseNumber, Course prerequisite) {
+        this.setCourseName(courseName);
+        this.setCourseNumber(courseNumber);
+        this.setPrerequisite(prerequisite);
     }
 }

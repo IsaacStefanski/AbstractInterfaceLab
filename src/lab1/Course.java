@@ -42,4 +42,8 @@ public abstract class Course {
     public void setCourseNumber(String courseNumber) {
         this.courseNumber = courseNumber;
     }
+    
+    public String toString(){
+        return courseName + " " + courseNumber + " (" + credits + " credits)";
+    }
 }

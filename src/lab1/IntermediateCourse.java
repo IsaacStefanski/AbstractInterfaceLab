@@ -10,11 +10,22 @@ package lab1;
  * @author Isaac
  */
 public class IntermediateCourse extends Course{
-    private String prerequisites;
+    private Course prerequisite;
     
     @Override
     public String getPrerequisiteCourses() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return prerequisite.toString();
     }
-    
+
+    public Course getPrerequisite() {
+        return prerequisite;
+    }
+
+    public void setPrerequisite(Course prerequisite) {
+        if(prerequisite != null){
+            this.prerequisite = prerequisite;
+        } else {
+            throw new IllegalArgumentException("Valid prerequisite course required at intermediate level");
+        }        
+    }    
 }
