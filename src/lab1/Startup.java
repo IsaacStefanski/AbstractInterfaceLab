@@ -14,5 +14,9 @@ public class Startup {
         Course course1 = new IntroToProgrammingCourse("Intro to Programming", "111-111", 4);
         Course course2 = new IntroJavaCourse("Intro to Java", "222-222", 8, course1);
         Course course3 = new AdvancedJavaCourse("Advanced Java", "333-333", 8, course2);
+        
+        System.out.println(course1.toString());
+        System.out.println(course2.toString());
+        System.out.println(course3.toString());
     }
 }
