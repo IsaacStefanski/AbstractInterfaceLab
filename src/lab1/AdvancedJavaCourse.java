@@ -10,9 +10,10 @@ import javax.swing.JOptionPane;
  */
 public class AdvancedJavaCourse extends IntermediateCourse{    
     
-    public AdvancedJavaCourse(String courseName, String courseNumber, Course prerequisite) {
+    public AdvancedJavaCourse(String courseName, String courseNumber, int credits, Course prerequisite) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
+        this.setCredits(credits);
         this.setPrerequisite(prerequisite);
     }
 }
