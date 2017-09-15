@@ -21,7 +21,7 @@ public abstract class Course {
     
     public void setCredits(double credits) {
         if(credits >= 0.5 && credits <= 4.0) {
-            this.setCredits(credits);
+            this.credits = credits;
         } else {
             throw new IllegalArgumentException("Error: credits must be in the range 0.5 to 4.0");
         }       
@@ -43,11 +43,11 @@ public abstract class Course {
         this.courseNumber = courseNumber;
     }
     
-    public final void setPrerequisites(String prerequisites) {
-        this.prerequisites = prerequisites;
-    }
-    
     public final String toString(){
         return courseName + " " + courseNumber + " (" + credits + " credits)";
+    }
+
+    public final void setPrerequisites(String prerequisites) {
+        this.prerequisites = prerequisites;
     }
 }
