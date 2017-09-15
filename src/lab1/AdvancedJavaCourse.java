@@ -8,12 +8,17 @@ import javax.swing.JOptionPane;
  * @author      Isaac Stefanski
  * @version     1.00
  */
-public class AdvancedJavaCourse extends IntermediateCourse{    
+public class AdvancedJavaCourse extends Course{    
     
-    public AdvancedJavaCourse(String courseName, String courseNumber, int credits, Course prerequisite) {
+    public AdvancedJavaCourse(String courseName, String courseNumber, double credits, String prerequisites) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
         this.setCredits(credits);
-        this.setPrerequisite(prerequisite);
+        this.setPrerequisites(prerequisites);
     }
+    
+    @Override
+    public String getPrerequisiteCourses() {
+        return this.getPrerequisiteCourses();
+    } 
 }

@@ -6,12 +6,17 @@ package lab1;
  * @author      Isaac Stefanski
  * @version     1.00
  */
-public class IntroJavaCourse extends IntermediateCourse{
+public class IntroJavaCourse extends Course{
     
-    public IntroJavaCourse(String courseName, String courseNumber, int credits, Course prerequisite) {
+    public IntroJavaCourse(String courseName, String courseNumber, double credits, String prerequisites) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
         this.setCredits(credits);
-        this.setPrerequisite(prerequisite);
+        this.setPrerequisites(prerequisites);
+    }
+    
+    @Override
+    public String getPrerequisiteCourses() {
+        return this.getPrerequisiteCourses();
     }
 }
