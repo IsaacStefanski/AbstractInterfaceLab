@@ -9,11 +9,11 @@ package lab1;
  */
 public class IntroToProgrammingCourse extends Course{
 
-//    public IntroToProgrammingCourse(String courseName, String courseNumber, double credits) {
-//        this.setCourseName(courseName);
-//        this.setCourseNumber(courseNumber);
-//        this.setCredits(credits);
-//    }
+    public IntroToProgrammingCourse(String courseName, String courseNumber, double credits) {
+        this.setCourseName(courseName);
+        this.setCourseNumber(courseNumber);
+        this.setCredits(credits);
+    }
     
     @Override
     public String getPrerequisiteCourses() {
