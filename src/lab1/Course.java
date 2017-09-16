@@ -23,7 +23,9 @@ public abstract class Course {
         if(credits >= 0.5 && credits <= 4.0) {
             this.credits = credits;
         } else {
-            throw new IllegalArgumentException("Error: credits must be in the range 0.5 to 4.0");
+            JOptionPane.showMessageDialog(null,
+                    "Error: courseNumber cannot be null of empty string");
+            System.exit(0);
         }       
     }
 
@@ -32,7 +34,11 @@ public abstract class Course {
     }
 
     public final void setCourseName(String courseName) {
-        this.courseName = courseName;
+        if(courseName != null){
+            this.courseName = courseName;
+        } else {
+            throw new IllegalArgumentException("Course name is required");
+        }
     }
 
     public final String getCourseNumber() {
@@ -40,7 +46,11 @@ public abstract class Course {
     }
 
     public final void setCourseNumber(String courseNumber) {
-        this.courseNumber = courseNumber;
+        if(courseNumber != null && courseNumber.charAt(3) == '-'){
+            this.courseNumber = courseNumber;
+        } else {
+            throw new IllegalArgumentException("Course number is required and must be formatted ###-###");
+        }
     }
     
     public final String toString(){

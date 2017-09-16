@@ -1,20 +1,50 @@
 package lab2;
 
+import javax.swing.JOptionPane;
+
 /**
  * Describe responsibilities here.
  *
  * @author      your name goes here
  * @version     1.00
  */
-public class IntroJavaCourse {
-    String courseName;
+public class IntroJavaCourse implements Course{
+    private String courseName;
     private String courseNumber;
     private double credits;
     private String prerequisites;
 
-    public IntroJavaCourse(String courseName, String courseNumber) {
-        this.courseName = courseName;
-        this.courseNumber = courseNumber;
+    public IntroJavaCourse(String courseName, String courseNumber, double credits, String prerequisites) {
+        this.setCourseName(courseName);
+        this.setCourseNumber(courseNumber);
+        this.setCredits(credits);
+        this.prerequisites = prerequisites;
+    }
+
+    public double getCredits(){
+        return credits;
+    }
+
+    public void setCredits(double credits) {
+        if(credits >= 0.5 && credits <= 4.0) {
+            this.credits = credits;
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Error: courseNumber cannot be null of empty string");
+            System.exit(0);
+        }       
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        if(courseName != null){
+            this.courseName = courseName;
+        } else {
+            throw new IllegalArgumentException("Course name is required");
+        }
     }
 
     public String getCourseNumber() {
@@ -22,24 +52,26 @@ public class IntroJavaCourse {
     }
 
     public void setCourseNumber(String courseNumber) {
-        this.courseNumber = courseNumber;
+        if(courseNumber != null && courseNumber.charAt(3) == '-'){
+            this.courseNumber = courseNumber;
+        } else {
+            throw new IllegalArgumentException("Course number is required and must be formatted ###-###");
+        }
     }
-
-    public double getCredits() {
-        return credits;
+    
+    public String toString(){
+        return courseName + " " + courseNumber + " (" + credits + " credits)";
     }
-
-    public void setCredits(double credits) {
-        this.credits = credits;
-    }
-
-    public String getPrerequisites() {
+    
+    public String getPrerequisites(){
         return prerequisites;
     }
 
     public void setPrerequisites(String prerequisites) {
-        this.prerequisites = prerequisites;
+        if(prerequisites != null){
+            this.prerequisites = prerequisites;
+        } else {
+            throw new IllegalArgumentException("This course has prerequisites");
+        }
     }
-
-    
 }
