@@ -23,9 +23,7 @@ public abstract class Course {
         if(credits >= 0.5 && credits <= 4.0) {
             this.credits = credits;
         } else {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: courseNumber cannot be null of empty string");
         }       
     }
 
