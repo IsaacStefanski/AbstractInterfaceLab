@@ -29,10 +29,8 @@ public class IntroToProgrammingCourse implements Course {
         if(credits >= 0.5 && credits <= 4.0) {
             this.credits = credits;
         } else {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
-        }       
+            throw new IllegalArgumentException("Error: courseNumber cannot be null of empty string");
+        }      
     }
 
     public String getCourseName() {
@@ -68,6 +66,10 @@ public class IntroToProgrammingCourse implements Course {
     }
 
     public void setPrerequisites(String prerequisites) {
-        throw new IllegalArgumentException("This is an introductory level course and has no prerequisites");
+        if(prerequisites.toLowerCase().equals("no prerequisites") || prerequisites.toLowerCase().equals("none")){
+            this.prerequisites = prerequisites;
+        } else {
+            throw new IllegalArgumentException("This is an introductory level course and has no prerequisites");
+        }        
     }
 }
