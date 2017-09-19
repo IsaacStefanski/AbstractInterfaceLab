@@ -58,6 +58,10 @@ public abstract class Course {
     }
 
     public final void setPrerequisites(String prerequisites) {
-        this.prerequisites = prerequisites;
+        if(prerequisites != null){
+            this.prerequisites = prerequisites;
+        } else {
+            throw new IllegalArgumentException("Value cannot be left empty; if no prerequisites, enter 'none'");
+        }
     }
 }
