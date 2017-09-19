@@ -25,7 +25,4 @@ public interface Course {
     public abstract String getPrerequisites();
     
     public abstract void setPrerequisites(String prerequisites);
-    
-    @Override
-    public abstract String toString();
 }
