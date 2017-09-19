@@ -21,11 +21,11 @@ public class IntroToProgrammingCourse implements Course {
         this.prerequisites = "No prerequisites";
     }
     
-    public double getCredits(){
+    public final double getCredits(){
         return credits;
     }
 
-    public void setCredits(double credits) {
+    public final void setCredits(double credits) {
         if(credits >= 0.5 && credits <= 4.0) {
             this.credits = credits;
         } else {
@@ -33,11 +33,11 @@ public class IntroToProgrammingCourse implements Course {
         }      
     }
 
-    public String getCourseName() {
+    public final String getCourseName() {
         return courseName;
     }
 
-    public void setCourseName(String courseName) {
+    public final void setCourseName(String courseName) {
         if(courseName != null){
             this.courseName = courseName;
         } else {
@@ -45,11 +45,11 @@ public class IntroToProgrammingCourse implements Course {
         }
     }
 
-    public String getCourseNumber() {
+    public final String getCourseNumber() {
         return courseNumber;
     }
 
-    public void setCourseNumber(String courseNumber) {
+    public final void setCourseNumber(String courseNumber) {
         if(courseNumber != null && courseNumber.charAt(3) == '-'){
             this.courseNumber = courseNumber;
         } else {
@@ -57,15 +57,15 @@ public class IntroToProgrammingCourse implements Course {
         }
     }
     
-    public String toString(){
+    public final String toString(){
         return courseName + " " + courseNumber + " (" + credits + " credits)";
     }
     
-    public String getPrerequisites(){
+    public final String getPrerequisites(){
         return prerequisites;
     }
 
-    public void setPrerequisites(String prerequisites) {
+    public final void setPrerequisites(String prerequisites) {
         if(prerequisites.toLowerCase().equals("no prerequisites") || prerequisites.toLowerCase().equals("none")){
             this.prerequisites = prerequisites;
         } else {

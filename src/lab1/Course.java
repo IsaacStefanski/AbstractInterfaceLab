@@ -19,7 +19,7 @@ public abstract class Course {
     
     public abstract String getPrerequisiteCourses();
     
-    public void setCredits(double credits) {
+    public final void setCredits(double credits) {
         if(credits >= 0.5 && credits <= 4.0) {
             this.credits = credits;
         } else {
